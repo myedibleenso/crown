@@ -99,7 +99,7 @@ public class Grind {
         // data used by CROWN (a paralle of WN's dict/ directory)
         for (File f : lexFileDir.listFiles()) {
             String name = f.getName();
-            if (name.startsWith("data.") || name.startsWith("index."))
+            if (name.startsWith("data.") || name.startsWith("index.") || name.startsWith("lexnames"))
                 Files.copy(f, new File(newDictDir, name));                
         }
         
