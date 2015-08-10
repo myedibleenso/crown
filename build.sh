@@ -77,7 +77,8 @@ fi
 echo "Compiling the CROWN Build"
 mvn package -Dmaven.javadoc.skip=true >/dev/null
 
-CMD="java -jar target/crown-2.0.0-jar-with-dependencies.jar $INPUT_ARGS -T $WORKING_FILE_DIR $WORDNET_DIR $LEXFILE_DIR $CROWN_DICT_DIR"
+# allocate more memory to safely process the full wiktionary
+CMD="java -Xmx6G -jar target/crown-2.0.0-jar-with-dependencies.jar $INPUT_ARGS -T $WORKING_FILE_DIR $WORDNET_DIR $LEXFILE_DIR $CROWN_DICT_DIR"
 
 echo $CMD
 
