@@ -144,6 +144,7 @@ public class LexicographerFileCreator {
             File oldDictDir, File newDictDir)
                 throws IOException {
 
+        CrownLogger.info("Beginning integrations for %d entries...", toIntegrate.size());
         // Get the mapping from a synset to the string denoting it in the
         // lexicographer files (e.g., "noun.group:kingdom2")
         Map<ISynset,String> synsetToLexFileId 
